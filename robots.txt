@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://piterw-13.github.io/sitemap.xml
