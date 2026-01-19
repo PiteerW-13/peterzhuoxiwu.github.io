@@ -8,18 +8,25 @@ Peter's Webpage
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <section class="hero">
+        <video autoplay muted loop playsincline class="hero-video">
+            <source src="assets/Cover_Video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlayed">
+            <h1>Exploring the Universe</h1>
+        </div>
+    </section>
+    <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="personalwritingwork.html">PETE-A Voyage Through the Space</a>
+            <a href="about.html">About</a>
+    </nav>
+    <section class="intro">
         <h1>Peter Zhuo Xi Wu</h1>
         <img src="assets/images/IMG_4381.jpg" alt="Portrait of Peter Zhuo Xi Wu" class="portrait" style="width: 378px; height: 504px;">
-        <p>First Year Student at Constructor University|Aspiring Researcher · Astrophysics</p>
-    </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="personalwritingwork.html">PETE-A Voyage Through the Space</a>
-        <a href="about.html">About</a>
-    </nav>
+        <p class="subtitle">First Year Student at Constructor University|Aspiring Researcher · Astrophysics</p>
+    </section>
 
     <main>
         <h2>Welcome</h2>
@@ -49,12 +56,12 @@ Peter's Webpage
         </tr>
     </main>
 
-    <section class="social-links">
-    <p>
-        Connect with me:
-        <a href="https://de.linkedin.com/in/peter-zhuo-xi-wu-5aa2292bb" target="_blank">LinkedIn</a> ·
-        <a href="https://www.instagram.com/piteer613/" target="_blank">Instagram</a>
-    </p>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-links">
+            <a href="https://de.linkedin.com/in/peter-zhuo-xi-wu-5aa2292bb" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/piteer613/" target="_blank">Instagram</a>
+        </div>
     </section>
     <footer>
         <p>© 2026 Peter Zhuo Xi Wu</p>
@@ -63,6 +70,43 @@ Peter's Webpage
 </html>
 
 <style>
+    .hero {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-overlayed {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-overlayed h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.hero-overlayed p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
     body {
     font-family: Georgia, serif;
     max-width: 900px;
@@ -76,30 +120,88 @@ Peter's Webpage
     color: #eaeaea;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 40px;
+.intro {
+  text-align: center;
+  padding: 100px 20px;
+  background: radial-gradient(circle at top, #0b1220, #020409);
+  color: #f0f0f0;
 }
+
+.intro h1 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+}
+
 .portrait {
-    object-fit: cover;
-    border-radius: 50%;    /* circular portrait */
-    margin: 20px auto;     /* spacing below name */
-    display: block;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-nav {
-    text-align: center;
-    margin-bottom: 40px;
+  width: 260px;
+  height: auto;
+  border-radius: 50%;
+  margin: 30px 0;
+  box-shadow: 0 0 40px rgba(255,255,255,0.2);
 }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #0056b3;
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
 }
 
-nav a:hover {
-    text-decoration: underline;
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 0;
+
+  background: linear-gradient(to right, #0b0f1a, #111827);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.navbar a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #7dd3fc;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.contact {
+  background: #0b0f1a;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 20px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.contact-links a {
+  color: #7dd3fc;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
 }
 
 footer {

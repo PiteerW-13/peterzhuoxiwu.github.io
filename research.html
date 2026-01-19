@@ -17,11 +17,11 @@
     <p>Astrophysics · Cosmology · Theoretical Physics</p>
 </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="personalwritingwork.html">PETE-A Voyage Through the Space</a>
-    <a href="about.html">About</a>
+<nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="personalwritingwork.html">PETE-A Voyage Through the Space</a>
+            <a href="about.html">About</a>
 </nav>
 
 <main>
@@ -50,6 +50,13 @@
     </ul>
 </section>
 
+<section class="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-links">
+            <a href="https://de.linkedin.com/in/peter-zhuo-xi-wu-5aa2292bb" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/piteer613/" target="_blank">Instagram</a>
+        </div>
+</section>
 </main>
 
 <footer>
@@ -90,19 +97,62 @@ li {
     padding: 20px;
     border-left: 4px solid #0056b3;
 }
-nav {
-    text-align: center;
-    margin-bottom: 40px;
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 0;
+
+  background: linear-gradient(to right, #0b0f1a, #111827);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #0056b3;
+.navbar a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #7dd3fc;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.contact {
+  background: #0b0f1a;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 20px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.contact-links a {
+  color: #7dd3fc;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
 }
 
 strong {
